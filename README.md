@@ -31,10 +31,6 @@ Restart ComfyUI, search for `MVA`, and add **MVA 多角度提示词生成器** (
 | `close_up` | 启用后追加 `close-up`。 | Appends `close-up` when enabled. |
 | `prompt` | STRING 输出，只包含原始英文 caption，不包含中文。 | STRING output containing the original English captions only, with no Chinese text. |
 
-> 下拉框中使用 `中文 | English` 格式；上表使用斜杠展示以方便阅读。
->
-> Actual dropdown labels use the `中文 | English` format; the table uses slashes for readability.
-
 例如：选择 `右侧面 | right side view`、`高角度俯拍 | high-angle shot`，启用特写，得到：
 
 For example, select `右侧面 | right side view` and `高角度俯拍 | high-angle shot`, then enable `close_up` to generate:
