@@ -14,13 +14,16 @@ Open a terminal in `ComfyUI/custom_nodes/` and run:
 git clone https://github.com/jlongk2005/comfyui-mva-prompt-builder.git
 ```
 
-也可以点击仓库页面的 **Code → Download ZIP**，解压后将文件夹重命名为 `comfyui-mva-prompt-builder`，再放入 `ComfyUI/custom_nodes/`。请确保 `__init__.py` 和 `nodes.py` 直接位于该文件夹内。
+也可以在 ComfyUI Manager 里用 **Install via Git URL** 粘贴上面的仓库地址安装；或者点击仓库页面的 **Code → Download ZIP**，解压后将文件夹重命名为 `comfyui-mva-prompt-builder`，再放入 `ComfyUI/custom_nodes/`。请确保 `__init__.py` 和 `nodes.py` 直接位于该文件夹内。
 
-Alternatively, click **Code → Download ZIP** on this repository page. Extract the archive, rename the folder to `comfyui-mva-prompt-builder`, and place it in `ComfyUI/custom_nodes/`. Make sure `__init__.py` and `nodes.py` are directly inside that folder.
+Alternatively, install via **Install via Git URL** in ComfyUI Manager, or click **Code → Download ZIP** on this repository page. Extract the archive, rename the folder to `comfyui-mva-prompt-builder`, and place it in `ComfyUI/custom_nodes/`. Make sure `__init__.py` and `nodes.py` are directly inside that folder.
 
 重启 ComfyUI，在节点搜索中输入 `MVA`，添加 **MVA 多角度提示词生成器**。
 
 Restart ComfyUI, search for `MVA`, and add **MVA 多角度提示词生成器** (MVA Prompt Builder).
+
+<!-- Screenshot: add assets/node.png, then uncomment the image below. -->
+<!-- ![MVA 节点 / MVA node](assets/node.png) -->
 
 ## 使用 / Usage
 
@@ -43,6 +46,12 @@ For example, select `右侧面 | right side view` and `高角度俯拍 | high-an
 
 Connect the STRING output to the `text` input of CLIP Text Encode. If needed, right-click the text widget on the target node and convert it to an input. Changes to the controls take effect on the next workflow execution; the prompt is calculated when the workflow runs.
 
+## 提示 / Tips
+
+- `<mva>` 触发词必须位于提示词开头，且不要翻译。<br>The `<mva>` trigger must lead the prompt and stay untranslated.
+- 角度控制使用 LoRA 训练时的英文 caption：下拉菜单的中文只是为了方便选择，实际输出的英文 label 请勿改动。<br>Angle control uses the English captions used during LoRA training. Chinese dropdown labels are provided for convenience; keep the generated English labels unchanged.
+- LoRA 强度建议从 `1.0` 开始；如果生成结果只是在照抄原图、机位转不动，把强度降到 `0.8` 再试。<br>Start LoRA strength at `1.0`; try lowering it to `0.8` if the output copies the input image instead of changing the camera angle.
+
 ## 兼容与限制 / Compatibility and limitations
 
 - 本节点只生成提示词，不加载 LoRA，也不负责生图。<br>This node generates prompt text only. It does not load a LoRA or generate images.
@@ -51,4 +60,8 @@ Connect the STRING output to the `text` input of CLIP Text Encode. If needed, ri
 
 ## 参考 / Reference
 
-[Qwen-Image-2.1 Multiple-Angles LoRA](https://huggingface.co/akhaliq/Qwen-Image-2.1-Multiple-Angles-LoRA)
+[Qwen-Image-2.1 Multiple-Angles LoRA](https://huggingface.co/akhaliq/Qwen-Image-2.1-Multiple-Angles-LoRA) by [@_akhaliq](https://x.com/_akhaliq) — 本节点为其配套的提示词组合工具 / the LoRA this node is built for.
+
+## 许可 / License
+
+[MIT](LICENSE)
