@@ -26,8 +26,8 @@ Restart ComfyUI, search for `MVA`, and add **MVA 多角度提示词生成器** (
 
 | 输入或输出 / Input or output | 中文说明 | English description |
 | --- | --- | --- |
-| `azimuth` | 12 种方位，中英双语显示，如 `正面 / front view`。 | 12 viewing directions with bilingual labels, such as `正面 / front view`. |
-| `elevation` | 4 种高度角，中英双语显示，如 `平视 / eye-level shot`。 | 4 camera elevation options with bilingual labels, such as `平视 / eye-level shot`. |
+| `azimuth` | 12 种方位，中英双语显示，如 `正面 \| front view`。 | 12 viewing directions with bilingual labels, such as `正面 \| front view`. |
+| `elevation` | 4 种高度角，中英双语显示，如 `平视 \| eye-level shot`。 | 4 camera elevation options with bilingual labels, such as `平视 \| eye-level shot`. |
 | `close_up` | 启用后追加 `close-up`。 | Appends `close-up` when enabled. |
 | `prompt` | STRING 输出，只包含原始英文 caption，不包含中文。 | STRING output containing the original English captions only, with no Chinese text. |
 
@@ -49,12 +49,9 @@ Connect the STRING output to the `text` input of CLIP Text Encode. If needed, ri
 
 ## 兼容与限制 / Compatibility and limitations
 
-- 本节点只生成提示词，不加载 LoRA，也不负责生图。  
-  This node generates prompt text only. It does not load a LoRA or generate images.
-- 不需要第三方 Python 包、前端 JavaScript 或 `requirements.txt`。  
-  No third-party Python packages, frontend JavaScript, or `requirements.txt` are required.
-- 执行层兼容旧版节点的纯英文输入值；旧工作流可能需要重新选择新版下拉框项目并保存。  
-  English-only input values from older versions are supported during execution. Older workflows may require reselecting the current dropdown options and saving the workflow.
+- 本节点只生成提示词，不加载 LoRA，也不负责生图。<br>This node generates prompt text only. It does not load a LoRA or generate images.
+- 不需要第三方 Python 包、前端 JavaScript 或 `requirements.txt`。<br>No third-party Python packages, frontend JavaScript, or `requirements.txt` are required.
+- 执行层兼容旧版节点的纯英文输入值；旧工作流可能需要重新选择新版下拉框项目并保存。<br>English-only input values from older versions are supported during execution. Older workflows may require reselecting the current dropdown options and saving the workflow.
 
 ## 参考 / Reference
 
