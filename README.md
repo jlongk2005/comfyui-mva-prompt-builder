@@ -22,8 +22,7 @@ Alternatively, install via **Install via Git URL** in ComfyUI Manager, or click 
 
 Restart ComfyUI, search for `MVA`, and add **MVA 多角度提示词生成器** (MVA Prompt Builder).
 
-<!-- Screenshot: add assets/node.png, then uncomment the image below. -->
-<!-- ![MVA 节点 / MVA node](assets/node.png) -->
+![MVA 节点 / MVA node](assets/node.png)
 
 ## 使用 / Usage
 
